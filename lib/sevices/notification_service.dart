@@ -1,5 +1,5 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:app_auth_firebase_ppb/screens/second_screen.dart';
+import 'package:app_auth_firebase_ppb/screens/notifications_setting.dart';
 import 'package:flutter/material.dart';
 import 'package:app_auth_firebase_ppb/main.dart';
 
@@ -77,7 +77,7 @@ class NotificationService {
       debugPrint(MyApp.navigatorKey.currentContext.toString());
       Navigator.push(
         MyApp.navigatorKey.currentContext!,
-        MaterialPageRoute(builder: (_) => const SecondScreen()),
+        MaterialPageRoute(builder: (_) => const NotificationScreen()),
       );
     }
   }
