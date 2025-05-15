@@ -1,7 +1,7 @@
 import 'package:app_auth_firebase_ppb/screens/home.dart';
 import 'package:app_auth_firebase_ppb/screens/login.dart';
+import 'package:app_auth_firebase_ppb/screens/notifications_setting.dart';
 import 'package:app_auth_firebase_ppb/screens/register.dart';
-import 'package:app_auth_firebase_ppb/screens/second_screen.dart';
 import 'package:app_auth_firebase_ppb/sevices/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'login',
       routes: {
         'home': (context) => const HomeScreen(),
-        'second': (context) => const SecondScreen(),
+        'notification': (context) => const NotificationScreen(),
         'login': (context) => const LoginScreen(),
         'register': (context) => const RegisterScreen(),
       },
