@@ -94,9 +94,9 @@ class NotificationService {
     final String? bigPicture,
     final List<NotificationActionButton>? actionButtons,
     final bool scheduled = false,
-    final Duration? interval,
+    final TimeOfDay? time,
   }) async {
-    assert(!scheduled || (scheduled && interval != null));
+    assert(!scheduled || (scheduled && time != null));
 
     await AwesomeNotifications().createNotification(
       content: NotificationContent(
@@ -114,11 +114,14 @@ class NotificationService {
       actionButtons: actionButtons,
       schedule:
           scheduled
-              ? NotificationInterval(
-                interval: interval,
-                timeZone:
-                    await AwesomeNotifications().getLocalTimeZoneIdentifier(),
-                preciseAlarm: true,
+              ? NotificationCalendar(
+                hour: time!.hour,
+                minute: time.minute,
+                second: 0,
+                millisecond: 0,
+                timeZone: DateTime.now().timeZoneName,
+                repeats: true,
+                allowWhileIdle: true,
               )
               : null,
     );
